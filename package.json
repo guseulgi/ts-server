@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm run build"
+    "build": "cross-env NODE_PATH=src react-scripts build",
+    "heroku-postbuild": "cross-env NODE_PATH=src npm run build"
   },
   "keywords": [],
   "author": "",
