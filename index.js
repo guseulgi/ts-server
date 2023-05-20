@@ -20,6 +20,7 @@ app.use(express.static('public'));
 
 
 // 기본 포트를 app 객체에 설정
+const host = '0.0.0.0';
 const port = process.env.PORT || 5001;
 
 // 라우터
@@ -35,6 +36,6 @@ app.use('/api/data', (req, res) => {
 });
 
 // 서버 구동
-app.listen(port, () => {
+app.listen(port, host, () => {
     console.log(`server running at http ${port}`);
 });
