@@ -20,7 +20,7 @@ app.use(express.static('public'));
 
 
 // 기본 포트를 app 객체에 설정
-//const port = 5001;
+const port = process.env.PORT || 5001;
 
 // 라우터
 const foodRouter = require('./routes/food');
@@ -35,6 +35,6 @@ app.use('/api/data', (req, res) => {
 });
 
 // 서버 구동
-// app.listen(port, () => {
-//     console.log(`server running at http ${port}`);
-// });
+app.listen(port, () => {
+    console.log(`server running at http ${port}`);
+});
